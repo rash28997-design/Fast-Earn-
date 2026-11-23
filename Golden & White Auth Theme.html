@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BANGLADESH FAST EARN</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Hind Siliguri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset & Google Fonts */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            background: #dceae3;
+            color: #0f172a;
+        }
+
+        .bn-font {
+            font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Harmonized Brand Logo Image Styling */
+        .brand-logo-img {
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1.5px solid rgba(251, 191, 36, 0.72);
+            box-shadow: 0 3px 10px rgba(2, 44, 34, 0.25);
+            background: #064e3b;
+        }
+
+        /* Mobile-first App Container */
+        .app-shell {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100dvh;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #ecfdf5 0%, #f8fafc 42%, #f1f5f9 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 44px rgba(4, 120, 87, 0.16);
+        }
+
+        /* Emerald Header Gradient */
+        .emerald-gradient {
+            background: linear-gradient(135deg, #059669 0%, #047857 58%, #064e3b 100%);
+        }
+
+        /* Golden & White Auth Theme Styles */
+        .gold-auth-shell {
+            background: linear-gradient(180deg, #fffbeb 0%, #fefce8 45%, #ffffff 100%);
+        }
+
+        .gold-header-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 55%, #fbbf24 100%);
+        }
+
+        .gold-cta-btn {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 60%, #fbbf24 100%);
+            color: #ffffff;
+        }
+
+        .gold-logo-ring {
+            border-radius: 9999px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(180, 83, 9, 0.28);
+            background: #ffffff;
+        }
+
+        .emerald-header {
+            background: linear-gradient(135deg, #059669 0%, #047857 58%, #064e3b 100%);
+            border-bottom-left-radius: 26px;
+            border-bottom-right-radius: 26px;
+            box-shadow: 0 10px 26px rgba(4, 120, 87, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emerald-header::after {
+            content: '';
+            position: absolute;
+            top: -35px;
+            right: -35px;
+            width: 140px;
+            height: 140px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.22) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Marquee Ticker */
+        @keyframes marqueeLoop {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeLoop 22s linear infinite;
+        }
+
+        /* Strict 1:1 Square Service Cards */
+        .square-card {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            border-radius: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .square-card:active {
+            transform: scale(0.96);
+            border-color: #00a86b;
+        }
+
+        /* Bottom Emerald Navigation Bar */
+        .bottom-nav {
+            background: linear-gradient(135deg, #00a86b 0%, #047857 100%);
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+            box-shadow: 0 -8px 24px rgba(4, 120, 87, 0.28);
+        }
+
+        /* Rainbow Ring for Drawer Avatar */
+        .drawer-avatar-ring {
+            background: conic-gradient(from 180deg, #06b6d4, #6366f1, #ec4899, #f59e0b, #00a86b, #06b6d4);
+        }
+
+        /* Animations */
+        @keyframes slideDrawerIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        .animate-drawer {
+            animation: slideDrawerIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-pop {
+            animation: modalPop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hidden File Input for Avatar Photo Upload -->
+    <input type="file" id="avatarFileInput" accept="image/*" class="hidden" onchange="handleAvatarFileChange(event)">
+
+    <!-- ==================== 1. FULL-SCREEN LOG IN & SIGN UP GATEWAY ==================== -->
+    <div id="authGateway" class="app-shell gold-auth-shell justify-between z-40">
+        <div>
+            <!-- Golden Top Brand Header -->
+            <div class="gold-header-gradient px-4 py-4 flex items-center justify-center gap-3 text-white shadow-md border-b border-amber-200">
+                <img src="https://i.ibb.co.com/HT4VF88G/file-00000000c8f08211bfd9d402a879d172.png"
+                     alt="Bangladesh Fast Earn Logo"
+                     onerror="this.onerror=null;this.src='https://placehold.co/80x80/f59e0b/ffffff?text=BFE';"
+                     class="gold-logo-ring w-11 h-11 shrink-0">
+                <div class="text-left">
+                    <h1 class="text-[17px] font-extrabold tracking-wide leading-tight text-white drop-shadow-xs">Bangladesh Fast Earn</h1>
+                    <p class="text-[10.5px] font-bold text-amber-50 tracking-wider uppercase">Trusted Digital Earning</p>
+                </div>
+            </div>
+
+            <!-- Segmented Pill Switcher: Log In | Sign Up -->
+            <div class="bg-white rounded-full shadow-md shadow-amber-500/10 p-1.5 mx-5 mt-5 grid grid-cols-2 gap-1.5 border border-amber-200">
+                <button type="button" id="authTabLogin" onclick="switchAuthTab('login')"
+                    class="gold-cta-btn py-2.5 rounded-full text-[13.5px] font-extrabold text-white shadow-sm transition">
+                    Log In
+                </button>
+                <button type="button" id="authTabSignup" onclick="switchAuthTab('signup')"
+                    class="bg-white py-2.5 rounded-full text-[13.5px] font-bold text-amber-900 hover:bg-amber-50 transition">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- LOG IN CARD -->
+            <div id="loginCard" class="bg-white rounded-[28px] shadow-lg shadow-amber-500/10 border border-amber-200/90 p-6 mx-4 mt-4 space-y-4 animate-pop">
+                <div class="text-center space-y-1.5">
+                    <div class="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-300 p-0.5 flex items-center justify-center mx-auto shadow-xs">
+                        <img src="https://i.ibb.co.com/HT4VF88G/file-00000000c8f08211bfd9d402a879d172.png"
+                             alt="Bangladesh Fast Earn Emblem"
+                             onerror="this.onerror=null;this.src='https://placehold.co/80x80/f59e0b/ffffff?text=BFE';"
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h2 class="text-[22px] font-extrabold text-slate-900 tracking-tight">Welcome Back</h2>
+                    <p class="text-[13px] text-slate-500">Login to access your dashboard</p>
+                </div>
+
+                <div class="space-y-3 pt-1">
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-regular fa-envelope"></i>
+                        </span>
+                        <input type="email" id="loginEmail" placeholder="Email Address"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input type="password" id="loginPassword" placeholder="Password"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-11 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                        <button type="button" onclick="toggleInputPassword('loginPassword', 'loginPassEye')" aria-label="Toggle Password Visibility"
+                            class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-amber-600 p-1.5">
+                            <i id="loginPassEye" class="fa-regular fa-eye pointer-events-none"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between gap-2 text-[11px] font-bold">
+                    <label class="inline-flex items-center gap-2 text-slate-600 cursor-pointer select-none">
+                        <input type="checkbox" id="keepLoggedCheck" checked class="w-4 h-4 rounded border-amber-300 accent-amber-500">
+                        <span>KEEP ME LOGGED IN</span>
+                    </label>
+                    <button type="button" onclick="showActionPopup('info', 'পাসওয়ার্ড রিসেট', 'পাসওয়ার্ড ভুলে গেলে টেলিগ্রাম এডমিন (@bangladeshfast_earn) এর সাথে যোগাযোগ করুন।')"
+                        class="text-amber-600 hover:text-amber-700 hover:underline uppercase tracking-tight">
+                        FORGOT PASSWORD?
+                    </button>
+                </div>
+
+                <button type="button" onclick="submitLogin()"
+                    class="gold-cta-btn w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[13.5px] py-3.5 rounded-full shadow-lg shadow-amber-500/30 flex items-center justify-center gap-2 uppercase tracking-wide transition">
+                    <span>LOGIN SECURELY</span>
+                    <i class="fa-solid fa-shield-halved text-white text-xs pointer-events-none"></i>
+                </button>
+
+                <p class="text-center text-[13px] text-slate-500 pt-1">
+                    New to our platform?
+                    <button type="button" onclick="switchAuthTab('signup')" class="font-extrabold text-amber-600 hover:underline ml-1">
+                        Create Account
+                    </button>
+                </p>
+            </div>
+
+            <!-- SIGN UP CARD -->
+            <div id="signupCard" class="hidden bg-white rounded-[28px] shadow-lg shadow-amber-500/10 border border-amber-200/90 p-6 mx-4 mt-4 space-y-4 animate-pop">
+                <div class="text-center space-y-1.5">
+                    <div class="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-300 p-0.5 flex items-center justify-center mx-auto shadow-xs">
+                        <img src="https://i.ibb.co.com/HT4VF88G/file-00000000c8f08211bfd9d402a879d172.png"
+                             alt="Bangladesh Fast Earn Emblem"
+                             onerror="this.onerror=null;this.src='https://placehold.co/80x80/f59e0b/ffffff?text=BFE';"
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <h2 class="text-[22px] font-extrabold text-slate-900 tracking-tight">Create Account</h2>
+                    <p class="text-[13px] text-slate-500">Start your journey with Bangladesh Fast Earn</p>
+                </div>
+
+                <!-- Embedded Tutorial Video Box -->
+                <div onclick="showActionPopup('info', 'ভিডিও টিউটোরিয়াল', 'খুব শীঘ্রই আসছে...')" role="button" tabindex="0"
+                    class="rounded-2xl border border-amber-200 p-3.5 bg-amber-50/50 hover:bg-amber-50 active:scale-[0.99] cursor-pointer transition space-y-2.5">
+                    <p class="text-[14px] font-bold text-slate-800 text-center leading-snug bn-font">
+                        আইডি এক্টিভ ছাড়াও কিভাবে কাজ করবেন ভিডিও টি দেখে নিন
+                    </p>
+
+                    <div class="relative w-full h-[146px] rounded-xl overflow-hidden bg-gradient-to-br from-amber-900 via-amber-700 to-yellow-600 border border-amber-300/60 flex flex-col justify-between p-3 text-white select-none">
+                        <!-- Mini Dashboard Mock Backdrop -->
+                        <div class="w-[74%] mx-auto bg-white rounded-t-lg p-2 shadow-md opacity-90">
+                            <div class="h-3 rounded bg-amber-500 mb-1.5 flex items-center justify-between px-1.5">
+                                <span class="w-10 h-1 bg-white/90 rounded"></span>
+                                <span class="w-6 h-1.5 bg-amber-200 rounded"></span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-1">
+                                <div class="h-6 rounded bg-amber-50 border border-amber-200"></div>
+                                <div class="h-6 rounded bg-yellow-50 border border-amber-200"></div>
+                            </div>
+                        </div>
+
+                        <!-- Center Play Button -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                            <div class="w-14 h-14 rounded-full bg-white text-amber-600 shadow-xl ring-4 ring-amber-300/70 flex items-center justify-center pl-1 text-xl">
+                                <i class="fa-solid fa-play pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Video Timeline Footer -->
+                        <div class="relative z-10 space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-semibold text-white">
+                                <span>0:00 / 1:08</span>
+                                <div class="flex items-center gap-3 text-xs">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                    <i class="fa-solid fa-expand"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                            <div class="w-full h-1 bg-white/35 rounded-full flex items-center">
+                                <span class="w-2.5 h-2.5 rounded-full bg-white shadow"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Inputs -->
+                <div class="space-y-3">
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-gift"></i>
+                        </span>
+                        <input type="text" id="signupReferral" placeholder="Referral ID"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input type="text" id="signupFullName" placeholder="Full Name"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </span>
+                        <input type="tel" id="signupPhone" placeholder="Bangladeshi Mobile Number"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-regular fa-envelope"></i>
+                        </span>
+                        <input type="email" id="signupEmail" placeholder="Email Address"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input type="password" id="signupPassword" placeholder="Password"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-11 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                        <button type="button" onclick="toggleInputPassword('signupPassword', 'signupPassEye')" aria-label="Toggle Password Visibility"
+                            class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-amber-600 p-1.5">
+                            <i id="signupPassEye" class="fa-regular fa-eye pointer-events-none"></i>
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-500 text-sm">
+                            <i class="fa-solid fa-check-double"></i>
+                        </span>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm Password"
+                            class="w-full bg-white border border-amber-200 rounded-2xl pl-10 pr-4 py-3 text-[13.5px] font-medium text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-100 transition">
+                    </div>
+                </div>
+
+                <button type="button" onclick="submitSignup()"
+                    class="gold-cta-btn w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] py-3.5 rounded-full shadow-lg shadow-amber-500/30 flex items-center justify-center gap-2 transition">
+                    <span>Register Now</span>
+                    <i class="fa-solid fa-arrow-right text-white text-xs pointer-events-none"></i>
+                </button>
+
+                <p class="text-center text-[13px] text-slate-500 pt-1">
+                    Already have an account?
+                    <button type="button" onclick="switchAuthTab('login')" class="font-extrabold text-amber-600 hover:underline ml-1">
+                        Login here
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Auth Footer -->
+        <footer class="py-5 px-4 text-center mt-4 bg-white/80 border-t border-amber-100">
+            <p class="text-[12px] font-bold text-amber-900/80">
+                © 2026 Bangladesh Fast Earn. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <!-- ==================== 2. MAIN APPLICATION DASHBOARD (#mainApp) ==================== -->
+    <div id="mainApp" class="app-shell hidden">
+
+        <!-- EMERALD TOP HEADER -->
+        <header class="emerald-header text-white px-4 pt-3.5 pb-4 z-30 shrink-0">
+            <div class="flex items-center justify-between gap-2 mb-3 relative z-10">
+                <button type="button" onclick="openDrawer()" aria-label="Open Menu"
+                    class="w-10 h-10 rounded-xl bg-white/15 hover:bg-white/25 active:scale-95 flex items-center justify-center transition shrink-0">
+                    <i class="fa-solid fa-bars text-lg pointer-events-none"></i>
+                </button>
+
+                <div class="flex items-center justify-center gap-2 min-w-0">
+                    <img src="https://i.ibb.co.com/HT4VF88G/file-00000000c8f08211bfd9d402a879d172.png"
+                         alt="Bangladesh Fast Earn Logo"
+                         onerror="this.onerror=null;this.src='https://placehold.co/64x64/064e3b/fde68a?text=BFE';"
+                         class="brand-logo-img w-7 h-7 shrink-0">
+                    <span class="text-[14.5px] sm:text-[16px] font-extrabold tracking-wide uppercase truncate">
+                        BANGLADESH FAST EARN
+                    </span>
+                </div>
+
+                <button type="button" onclick="openWelcomeModal()" aria-label="Notifications"
+                    class="w-10 h-10 rounded-xl bg-white/15 hover:bg-white/25 active:scale-95 flex items-center justify-center relative transition shrink-0">
+                    <i class="fa-regular fa-bell text-lg pointer-events-none"></i>
+                    <span id="headerNotifDot" class="w-2.5 h-2.5 rounded-full bg-amber-300 border-2 border-[#047857] absolute top-2 right-2"></span>
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 relative z-10">
+                <div class="flex items-center gap-3 min-w-0">
+                    <button type="button" onclick="triggerAvatarUpload()" title="প্রোফাইল ছবি আপলোড করুন"
+                        class="relative w-12 h-12 rounded-full bg-white border-2 border-amber-300 shadow-md flex items-center justify-center overflow-hidden shrink-0 active:scale-95 transition">
+                        <img id="headerAvatarImg" src="" alt="Avatar" class="w-full h-full object-cover hidden">
+                        <div id="headerAvatarPlaceholder" class="w-full h-full bg-emerald-50 flex items-center justify-center text-emerald-700">
+                            <i class="fa-solid fa-user text-lg"></i>
+                        </div>
+                    </button>
+
+                    <div class="min-w-0">
+                        <p class="text-[10px] font-bold tracking-wider uppercase text-emerald-100 leading-tight">
+                            WELCOME BACK,
+                        </p>
+                        <p id="headerUserName" class="text-[16px] font-extrabold text-white bn-font truncate leading-snug">
+                            New User
+                        </p>
+                    </div>
+                </div>
+
+                <button type="button" onclick="switchView('wallet')"
+                    class="bg-[#064e3b]/80 hover:bg-[#064e3b] active:scale-95 border border-amber-300/40 px-3.5 py-2 rounded-full flex items-center gap-2 shadow-inner shrink-0 transition">
+                    <span class="w-6 h-6 rounded-full bg-amber-400 text-amber-950 flex items-center justify-center text-xs font-bold">
+                        ৳
+                    </span>
+                    <span id="headerBalanceText" class="text-[15px] font-extrabold tracking-tight text-white">
+                        ৳ 00.00
+                    </span>
+                </button>
+            </div>
+        </header>
+
+        <!-- SCROLLABLE MAIN CONTENT AREA -->
+        <main id="mainScrollContainer" class="flex-1 px-3.5 pt-3 pb-[92px] overflow-y-auto no-scrollbar">
+
+            <!-- ==================== VIEW: HOME DASHBOARD ==================== -->
+            <section id="view-home" class="app-view space-y-3">
+                <!-- Scrolling Notice Ticker -->
+                <div class="bg-white rounded-full px-2.5 py-1.5 shadow-xs border border-emerald-100 flex items-center gap-2.5">
+                    <span class="bg-[#00a86b] text-white text-[11px] font-extrabold px-3 py-1 rounded-full tracking-wide shrink-0">
+                        Notice
+                    </span>
+                    <div class="overflow-hidden flex-1">
+                        <div class="marquee-track text-[13px] font-semibold text-slate-800 bn-font">
+                            <span class="pr-10">বাংলাদেশ ফাস্ট আর্ন-এ আপনাকে স্বাগতম! প্রতিদিন কাজ করুন এবং ইনস্ট্যান্ট উইথড্র নিন।</span>
+                            <span class="pr-10">বাংলাদেশ ফাস্ট আর্ন-এ আপনাকে স্বাগতম! প্রতিদিন কাজ করুন এবং ইনস্ট্যান্ট উইথড্র নিন।</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto-Scrolling 3-Slide Promotional Banner -->
+                <div id="bannerCarousel" class="relative w-full h-[120px] rounded-2xl overflow-hidden shadow-sm border border-emerald-200/70 select-none">
+                    <div id="bannerSliderTrack" class="flex w-full h-full transition-transform duration-500 ease-out">
+                        <!-- Slide 1 -->
+                        <div class="w-full min-w-full flex-shrink-0 h-full emerald-gradient px-4 py-3 flex items-center justify-between gap-3 text-white relative">
+                            <div class="flex-1 min-w-0 space-y-1">
+                                <span class="inline-block bg-amber-400/25 border border-amber-300/40 text-amber-200 text-[9.5px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                    DAILY INCOME
+                                </span>
+                                <h3 class="text-[16px] font-extrabold leading-tight bn-font">
+                                    ঘরে বসে প্রতিদিন ইনকাম করুন
+                                </h3>
+                                <p class="text-[11px] text-emerald-50 bn-font leading-snug">
+                                    ফেসবুক, জিমেইল ও ইনস্টাগ্রাম সেল করে প্রতিদিন নিশ্চিত আয় করুন
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-white/15 border border-amber-300/40 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-sack-dollar text-amber-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="w-full min-w-full flex-shrink-0 h-full bg-gradient-to-r from-[#065f46] via-[#047857] to-[#0d9488] px-4 py-3 flex items-center justify-between gap-3 text-white relative">
+                            <div class="flex-1 min-w-0 space-y-1">
+                                <span class="inline-block bg-white/20 text-white text-[9.5px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                    REFER &amp; EARN
+                                </span>
+                                <h3 class="text-[16px] font-extrabold leading-tight bn-font">
+                                    রেফার বোনাস ধামাকা অফার!
+                                </h3>
+                                <p class="text-[11px] text-teal-50 bn-font leading-snug">
+                                    বন্ধুদের রেফার করে প্রতিটি সফল রেফারে ইনস্ট্যান্ট বোনাস নিন
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-users-rays text-amber-300"></i>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="w-full min-w-full flex-shrink-0 h-full bg-gradient-to-r from-[#047857] via-[#059669] to-[#d97706] px-4 py-3 flex items-center justify-between gap-3 text-white relative">
+                            <div class="flex-1 min-w-0 space-y-1">
+                                <span class="inline-block bg-black/20 text-amber-200 text-[9.5px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                                    TARGET BONUS
+                                </span>
+                                <h3 class="text-[16px] font-extrabold leading-tight bn-font">
+                                    টার্গেট পূরণ করলেই ৳২০০ বোনাস
+                                </h3>
+                                <p class="text-[11px] text-white/95 bn-font leading-snug">
+                                    নির্ধারিত সময়ের মধ্যে ২০টি ভেরিফায়েড রেফার সম্পন্ন করুন
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-trophy text-amber-200"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner Dots -->
+                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 bg-black/25 px-2.5 py-1 rounded-full">
+                        <button type="button" onclick="setBannerSlide(0)" aria-label="Slide 1" class="banner-dot w-4 h-1.5 rounded-full bg-white transition-all"></button>
+                        <button type="button" onclick="setBannerSlide(1)" aria-label="Slide 2" class="banner-dot w-1.5 h-1.5 rounded-full bg-white/50 transition-all"></button>
+                        <button type="button" onclick="setBannerSlide(2)" aria-label="Slide 3" class="banner-dot w-1.5 h-1.5 rounded-full bg-white/50 transition-all"></button>
+                    </div>
+                </div>
+
+                <!-- 2x3 Uniform Square Cards Section -->
+                <div class="bg-white rounded-[24px] p-3.5 shadow-sm border border-emerald-100/90">
+                    <div class="flex items-center justify-between mb-3 px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-xl bg-emerald-50 text-[#00a86b] flex items-center justify-center text-xs">
+                                <i class="fa-solid fa-grid-2"></i>
+                            </span>
+                            <h2 class="text-[15.5px] font-extrabold text-slate-800 bn-font">
+                                আমাদের প্রজেক্ট সমূহ
+                            </h2>
+                        </div>
+                        <span class="text-[10.5px] font-bold text-[#047857] bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                            6 Services
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- 1. ফেসবুক সেল -->
+                        <button type="button" onclick="switchView('fb')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-blue-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#eff6ff] border border-blue-100 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-[#1877F2] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">ফেসবুক সেল</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Facebook Sell</p>
+                        </button>
+
+                        <!-- 2. জিমেইল সেল -->
+                        <button type="button" onclick="switchView('gmail')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-rose-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#fff1f2] border border-rose-100 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-[#EA4335] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">জিমেইল সেল</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Gmail Sell</p>
+                        </button>
+
+                        <!-- 3. ইনস্টা সেল -->
+                        <button type="button" onclick="switchView('insta')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-pink-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#fdf2f8] border border-pink-100 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">ইনস্টা সেল</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Instagram Sell</p>
+                        </button>
+
+                        <!-- 4. রেফার -->
+                        <button type="button" onclick="switchView('refer')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-violet-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#f3e8ff] border border-violet-100 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-[#7C3AED] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">রেফার</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Refer &amp; Earn</p>
+                        </button>
+
+                        <!-- 5. গিফট কোড -->
+                        <button type="button" onclick="switchView('gift')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-pink-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#fce7f3] border border-pink-100 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-[#EC4899] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-solid fa-gift"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">গিফট কোড</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Gift Code</p>
+                        </button>
+
+                        <!-- 6. টার্গেট বোনাস -->
+                        <button type="button" onclick="switchView('target')"
+                            class="square-card p-3 flex flex-col items-center justify-center text-center hover:bg-amber-50/40">
+                            <div class="w-12 h-12 rounded-2xl bg-[#fef3c7] border border-amber-200/80 flex items-center justify-center mb-2">
+                                <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#EA580C] text-white flex items-center justify-center text-sm shadow-xs">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </span>
+                            </div>
+                            <p class="text-[14px] font-bold text-slate-800 bn-font leading-tight">টার্গেট বোনাস</p>
+                            <p class="text-[11px] font-semibold text-slate-400 mt-0.5">Target Bonus</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: FACEBOOK SELL ==================== -->
+            <section id="view-fb" class="app-view hidden space-y-3.5">
+                <div class="flex items-center justify-between">
+                    <button type="button" onclick="switchView('home')"
+                        class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                        <span>Back</span>
+                    </button>
+                    <span class="bg-[#1877F2] text-white text-[12px] font-extrabold px-3 py-1 rounded-full">
+                        Rate: ৳5.50
+                    </span>
+                </div>
+
+                <!-- Form View -->
+                <div id="fbFormWrap" class="bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3.5">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-lg bg-[#1877F2] text-white flex items-center justify-center text-xs">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        <h2 class="text-[17px] font-extrabold text-slate-800">Facebook Sell</h2>
+                    </div>
+
+                    <div class="bg-blue-50 border border-dashed border-blue-300 rounded-2xl p-3 space-y-2">
+                        <p class="text-[12.5px] font-bold text-slate-700 bn-font">পাসওয়ার্ড রিকোয়ারমেন্ট:</p>
+                        <div class="bg-white rounded-xl px-3 py-2 flex items-center justify-between border border-blue-100">
+                            <span class="text-[15px] font-extrabold text-[#1877F2]">Noman@23</span>
+                            <button type="button" onclick="copyText('Noman@23')"
+                                class="bg-[#1877F2] hover:bg-blue-700 active:scale-95 text-white text-[11px] font-extrabold px-3 py-1 rounded-lg uppercase">
+                                COPY
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">UID</label>
+                            <input type="text" id="fbUidInput" placeholder="Facebook UID দিন"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#1877F2]">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">Password</label>
+                            <input type="text" id="fbPassInput" placeholder="Password দিন"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#1877F2]">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">Cookies</label>
+                            <input type="text" id="fbCookiesInput" placeholder="Cookies দিন"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#1877F2]">
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="submitFbOrder()"
+                        class="w-full bg-[#1877F2] hover:bg-blue-700 active:scale-[0.98] text-white font-extrabold text-[13.5px] py-3.5 rounded-xl shadow-md uppercase tracking-wide transition">
+                        SUBMIT FACEBOOK ID
+                    </button>
+
+                    <button type="button" onclick="toggleSalesActivity('fb', true)"
+                        class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-[13px] py-3 rounded-xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-slate-500"></i>
+                        <span>Sales Activity</span>
+                    </button>
+                </div>
+
+                <!-- Activity History View -->
+                <div id="fbActivityWrap" class="hidden bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-[16px] font-extrabold text-slate-800">Facebook Sales Activity</h3>
+                        <button type="button" onclick="toggleSalesActivity('fb', false)"
+                            class="text-[12.5px] font-bold text-[#1877F2] hover:underline">
+                            ← Form
+                        </button>
+                    </div>
+                    <div id="fbActivityList" class="divide-y divide-slate-100 text-[13px]"></div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: GMAIL SELL ==================== -->
+            <section id="view-gmail" class="app-view hidden space-y-3.5">
+                <div class="flex items-center justify-between">
+                    <button type="button" onclick="switchView('home')"
+                        class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                        <span>Back</span>
+                    </button>
+                    <span class="bg-[#EA4335] text-white text-[12px] font-extrabold px-3 py-1 rounded-full">
+                        Rate: ৳17.00
+                    </span>
+                </div>
+
+                <div id="gmailFormWrap" class="bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3.5">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-lg bg-[#EA4335] text-white flex items-center justify-center text-xs">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <h2 class="text-[17px] font-extrabold text-slate-800">Gmail Sell</h2>
+                    </div>
+
+                    <div class="bg-amber-50 border border-dashed border-amber-300 rounded-2xl p-3 space-y-2">
+                        <p class="text-[12.5px] font-bold text-slate-700 bn-font">ব্যবহারের পাসওয়ার্ড:</p>
+                        <div class="bg-white rounded-xl px-3 py-2 flex items-center justify-between border border-amber-200">
+                            <span class="text-[15px] font-extrabold text-[#EA4335]">@shanto@#&amp;</span>
+                            <button type="button" onclick="copyText('@shanto@#&')"
+                                class="bg-slate-800 hover:bg-slate-900 active:scale-95 text-white text-[11px] font-extrabold px-3 py-1 rounded-lg uppercase">
+                                COPY
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 bn-font mb-1">জিমেইল এড্রেস</label>
+                            <input type="email" id="gmailAddrInput" placeholder="example@gmail.com"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#EA4335]">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 bn-font mb-1">পাসওয়ার্ড</label>
+                            <input type="text" id="gmailPassInput" placeholder="পাসওয়ার্ড লিখুন"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#EA4335]">
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="submitGmailOrder()"
+                        class="w-full bg-[#EA4335] hover:bg-red-600 active:scale-[0.98] text-white font-extrabold text-[13.5px] py-3.5 rounded-xl shadow-md uppercase tracking-wide transition">
+                        SUBMIT GMAIL
+                    </button>
+
+                    <button type="button" onclick="toggleSalesActivity('gmail', true)"
+                        class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-[13px] py-3 rounded-xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-slate-500"></i>
+                        <span>Sales Activity</span>
+                    </button>
+                </div>
+
+                <div id="gmailActivityWrap" class="hidden bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-[16px] font-extrabold text-slate-800">Gmail Sales Activity</h3>
+                        <button type="button" onclick="toggleSalesActivity('gmail', false)"
+                            class="text-[12.5px] font-bold text-[#EA4335] hover:underline">
+                            ← Form
+                        </button>
+                    </div>
+                    <div id="gmailActivityList" class="divide-y divide-slate-100 text-[13px]"></div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: INSTAGRAM SELL ==================== -->
+            <section id="view-insta" class="app-view hidden space-y-3.5">
+                <div class="flex items-center justify-between">
+                    <button type="button" onclick="switchView('home')"
+                        class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                        <span>Back</span>
+                    </button>
+                    <span class="bg-[#E1306C] text-white text-[12px] font-extrabold px-3 py-1 rounded-full">
+                        Rate: Tk 4.00
+                    </span>
+                </div>
+
+                <div id="instaFormWrap" class="bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3.5">
+                    <div class="flex items-center gap-2">
+                        <span class="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white flex items-center justify-center text-xs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </span>
+                        <h2 class="text-[17px] font-extrabold text-slate-800">Instagram Sell</h2>
+                    </div>
+
+                    <div class="bg-pink-50 border border-dashed border-pink-300 rounded-2xl p-3 space-y-2">
+                        <p class="text-[12.5px] font-bold text-slate-700">Project Password:</p>
+                        <div class="bg-white rounded-xl px-3 py-2 flex items-center justify-between border border-pink-100">
+                            <span class="text-[15px] font-extrabold text-[#E1306C]">Noman@23</span>
+                            <button type="button" onclick="copyText('Noman@23')"
+                                class="bg-[#E1306C] hover:bg-pink-700 active:scale-95 text-white text-[11px] font-extrabold px-3 py-1 rounded-lg uppercase">
+                                COPY
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">Username</label>
+                            <input type="text" id="instaUserInput" placeholder="@username"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#E1306C]">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">Password</label>
+                            <input type="text" id="instaPassInput" placeholder="Password"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#E1306C]">
+                        </div>
+                        <div>
+                            <label class="block text-[13px] font-bold text-slate-700 mb-1">2FA Key</label>
+                            <input type="text" id="insta2faInput" placeholder="2FA Key"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-[14px] focus:outline-none focus:border-[#E1306C]">
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="submitInstaOrder()"
+                        class="w-full bg-[#E1306C] hover:bg-pink-700 active:scale-[0.98] text-white font-extrabold text-[13.5px] py-3.5 rounded-xl shadow-md uppercase tracking-wide transition">
+                        SUBMIT INSTAGRAM ID
+                    </button>
+
+                    <button type="button" onclick="toggleSalesActivity('insta', true)"
+                        class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-[13px] py-3 rounded-xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-clock-rotate-left text-slate-500"></i>
+                        <span>Sales Activity</span>
+                    </button>
+                </div>
+
+                <div id="instaActivityWrap" class="hidden bg-white rounded-[24px] p-4 shadow-sm border border-slate-100 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-[16px] font-extrabold text-slate-800">Instagram Sales Activity</h3>
+                        <button type="button" onclick="toggleSalesActivity('insta', false)"
+                            class="text-[12.5px] font-bold text-[#E1306C] hover:underline">
+                            ← Form
+                        </button>
+                    </div>
+                    <div id="instaActivityList" class="divide-y divide-slate-100 text-[13px]"></div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: REFER & EARN ==================== -->
+            <section id="view-refer" class="app-view hidden space-y-3.5">
+                <button type="button" onclick="switchView('home')"
+                    class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back</span>
+                </button>
+
+                <div class="bg-white rounded-[26px] p-5 shadow-sm border border-emerald-100 text-center space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-[20px] font-extrabold text-slate-800 bn-font">রেফার করে আয় করুন</h2>
+                        <p class="text-[13px] text-slate-500 bn-font mt-1">
+                            আপনার রেফার কোড এবং রেফার লিংক বন্ধুদের সাথে শেয়ার করুন। প্রতিটি সফল ভেরিফায়েড রেফারে ৳১৫ কমিশন পাবেন।
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-[#f0fdf7] border border-emerald-200/80 rounded-2xl p-3">
+                            <p class="text-[10.5px] font-bold uppercase text-slate-500">PER REFER BONUS</p>
+                            <p class="text-[19px] font-extrabold text-[#047857] mt-0.5">৳ 15.00</p>
+                        </div>
+                        <div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-3">
+                            <p class="text-[10.5px] font-bold uppercase text-slate-500">VERIFIED REFERS</p>
+                            <p id="referCountDisplay" class="text-[19px] font-extrabold text-amber-700 mt-0.5">0</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 space-y-2.5 text-left">
+                        <p class="text-[11px] font-bold uppercase text-slate-400">YOUR REFERRAL CODE</p>
+                        <div class="bg-white rounded-xl px-3.5 py-2.5 border border-slate-200 flex items-center justify-between">
+                            <span id="userReferCode" class="text-[16px] font-extrabold tracking-widest text-[#047857]">BFE32273</span>
+                            <button type="button" onclick="copyText(document.getElementById('userReferCode').textContent)"
+                                class="emerald-gradient text-white text-[11px] font-extrabold px-3.5 py-1.5 rounded-lg uppercase">
+                                COPY CODE
+                            </button>
+                        </div>
+
+                        <p class="text-[11px] font-bold uppercase text-slate-400 pt-1">REFERRAL LINK</p>
+                        <div class="bg-white rounded-xl px-3.5 py-2.5 border border-slate-200 flex items-center justify-between gap-2">
+                            <span id="userReferLink" class="text-[12px] font-semibold text-slate-600 truncate">https://bangladeshfastearn.com/?ref=BFE32273</span>
+                            <button type="button" onclick="copyText(document.getElementById('userReferLink').textContent)"
+                                class="bg-slate-800 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-lg uppercase shrink-0">
+                                COPY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: GIFT CODE ==================== -->
+            <section id="view-gift" class="app-view hidden space-y-3.5">
+                <button type="button" onclick="switchView('home')"
+                    class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back</span>
+                </button>
+
+                <div class="bg-white rounded-[26px] p-5 shadow-sm border border-emerald-100 text-center space-y-4">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-[20px] font-extrabold text-slate-800 bn-font">গিফট কোড রিডিম করুন</h2>
+                        <p class="text-[13px] text-slate-500 bn-font mt-1">
+                            অ্যাডমিন প্যানেল থেকে সেট করা সঠিক গিফট কোড দিন এবং বোনাস ব্যালেন্স যুক্ত করুন।
+                        </p>
+                    </div>
+
+                    <div class="space-y-2 text-left">
+                        <label class="block text-[12px] font-bold uppercase tracking-wider text-slate-500">Enter Gift Code</label>
+                        <input type="text" id="giftCodeField" placeholder="গিফট কোড লিখুন"
+                            class="w-full bg-[#f0fdf7] border border-emerald-200 rounded-2xl px-4 py-3 text-[15px] font-extrabold uppercase tracking-widest text-center text-slate-800 focus:outline-none focus:border-[#00a86b]">
+                    </div>
+
+                    <button type="button" onclick="submitGiftCode()"
+                        class="emerald-gradient w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] py-3.5 rounded-2xl shadow-md uppercase tracking-wide transition">
+                        REDEEM GIFT CODE
+                    </button>
+
+                    <div id="redeemedListWrap" class="hidden pt-2 border-t border-slate-100 text-left space-y-2">
+                        <p class="text-[11.5px] font-bold text-slate-500 uppercase">Claimed Codes</p>
+                        <div id="redeemedList" class="space-y-1.5 text-[13px]"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: TARGET BONUS ==================== -->
+            <section id="view-target" class="app-view hidden space-y-3.5">
+                <button type="button" onclick="switchView('home')"
+                    class="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#047857] bg-white px-3 py-1.5 rounded-xl border border-emerald-100">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back</span>
+                </button>
+
+                <div class="bg-white rounded-[26px] p-5 shadow-sm border border-emerald-100 text-center space-y-4">
+                    <div class="bg-[#f0fdf7] border border-emerald-200 rounded-2xl py-2.5 px-3.5 inline-flex items-center justify-center gap-2 mx-auto max-w-full">
+                        <i class="fa-regular fa-clock text-[#00a86b] text-sm shrink-0"></i>
+                        <p id="targetTimerDisplay" class="text-[12.5px] sm:text-[13px] font-extrabold text-[#047857] bn-font leading-snug">
+                            আপনার সময়: 5 দিন 0 ঘণ্টা 0 মিনিট 0 সেকেন্ড
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <h2 class="text-[21px] font-extrabold text-slate-800 flex items-center justify-center gap-1.5">
+                            <span>Referral Target Bonus</span>
+                            <span>⚡</span>
+                        </h2>
+                        <p class="text-[13.5px] text-slate-500 bn-font leading-relaxed px-2">
+                            20টি verified referral complete করলে ৳200 bonus claim করতে পারবেন।
+                        </p>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                            <div id="targetBarFill" style="width: 0%;"
+                                class="h-full bg-gradient-to-r from-[#00a86b] to-amber-500 rounded-full transition-all duration-300"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-[13px] font-bold">
+                            <span id="targetPercentText" class="text-slate-600">Progress: 0%</span>
+                            <span id="targetCountText" class="text-[#047857]">0 / 20</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f0fdf7]/70 border border-emerald-200/80 rounded-2xl py-4 px-3 grid grid-cols-2 divide-x divide-emerald-200/70">
+                        <div class="text-center">
+                            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">BONUS</p>
+                            <p class="text-[20px] font-extrabold text-[#047857] mt-0.5">৳200</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">GOAL</p>
+                            <p class="text-[20px] font-extrabold text-slate-800 mt-0.5">20 Verified</p>
+                        </div>
+                    </div>
+
+                    <button type="button" id="claimTargetBtn" onclick="claimTargetReward()"
+                        class="w-full bg-slate-300 text-white font-extrabold text-[14px] py-3.5 rounded-2xl uppercase tracking-wide transition">
+                        CLAIM BONUS (LOCKED)
+                    </button>
+
+                    <button type="button" onclick="switchView('refer')"
+                        class="w-full text-[13px] font-bold text-[#00a86b] hover:underline pt-0.5 bn-font">
+                        রেফার লিংক কপি করতে এখানে ট্যাপ করুন →
+                    </button>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: TUTORIALS ==================== -->
+            <section id="view-tutorials" class="app-view hidden space-y-3.5">
+                <div class="bg-white rounded-[24px] p-4 shadow-sm border border-emerald-100 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-xl bg-emerald-50 text-[#00a86b] flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-circle-play"></i>
+                        </span>
+                        <div>
+                            <h2 class="text-[17px] font-extrabold text-slate-800">Work Tutorials</h2>
+                            <p class="text-[12px] text-slate-500 bn-font">কাজ শেখার ভিডিও টিউটোরিয়াল সমূহ</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div onclick="showActionPopup('info', 'ভিডিও টিউটোরিয়াল', 'খুব শীঘ্রই আসছে...')" role="button" tabindex="0"
+                            class="border border-emerald-200/80 rounded-2xl p-3 bg-[#f0fdf7]/60 hover:bg-[#f0fdf7] cursor-pointer flex items-center justify-between gap-3 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl emerald-gradient text-white flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-bold text-slate-800 bn-font">ফেসবুক ও জিমেইল সেল গাইড</p>
+                                    <p class="text-[11.5px] text-slate-500 bn-font">ক্লিক করে ভিডিও দেখুন</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-[#047857] bg-white px-2.5 py-1 rounded-full border border-emerald-200">Play</span>
+                        </div>
+
+                        <div onclick="showActionPopup('info', 'ভিডিও টিউটোরিয়াল', 'খুব শীঘ্রই আসছে...')" role="button" tabindex="0"
+                            class="border border-emerald-200/80 rounded-2xl p-3 bg-[#f0fdf7]/60 hover:bg-[#f0fdf7] cursor-pointer flex items-center justify-between gap-3 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-bold text-slate-800 bn-font">ইনস্টাগ্রাম সেল ও রেফার গাইড</p>
+                                    <p class="text-[11.5px] text-slate-500 bn-font">ক্লিক করে ভিডিও দেখুন</p>
+                                </div>
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-700 bg-white px-2.5 py-1 rounded-full border border-amber-200">Play</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: WALLET / WITHDRAW ==================== -->
+            <section id="view-wallet" class="app-view hidden space-y-3.5">
+                <div class="bg-white rounded-[26px] p-4 shadow-sm border border-emerald-100 space-y-3.5">
+                    <h2 class="text-[18px] font-extrabold text-center text-slate-800">Withdraw Funds</h2>
+
+                    <div class="bg-[#f0fdf7] border border-emerald-200 rounded-2xl py-4 px-3 text-center">
+                        <p class="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">AVAILABLE BALANCE</p>
+                        <p id="walletBalanceText" class="text-[28px] font-extrabold text-[#047857]">৳ 00.00</p>
+                    </div>
+
+                    <div>
+                        <p class="text-[13px] font-bold text-slate-600 mb-2">Select Amount</p>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button type="button" onclick="pickWithdrawAmount(this, 110)"
+                                class="withdraw-amt-btn border border-slate-200 bg-white rounded-2xl py-3 px-2 text-center transition">
+                                <p class="text-[17px] font-extrabold text-slate-800">৳110</p>
+                                <p class="text-[11px] font-semibold text-rose-500 bn-font mt-0.5">চার্জ: ৳10</p>
+                            </button>
+                            <button type="button" onclick="pickWithdrawAmount(this, 200)"
+                                class="withdraw-amt-btn border border-slate-200 bg-white rounded-2xl py-3 px-2 text-center transition">
+                                <p class="text-[17px] font-extrabold text-slate-800">৳200</p>
+                                <p class="text-[11px] font-semibold text-rose-500 bn-font mt-0.5">চার্জ: ৳10</p>
+                            </button>
+                            <button type="button" onclick="pickWithdrawAmount(this, 300)"
+                                class="withdraw-amt-btn border border-slate-200 bg-white rounded-2xl py-3 px-2 text-center transition">
+                                <p class="text-[17px] font-extrabold text-slate-800">৳300</p>
+                                <p class="text-[11px] font-semibold text-rose-500 bn-font mt-0.5">চার্জ: ৳10</p>
+                            </button>
+                            <button type="button" onclick="pickWithdrawAmount(this, 500)"
+                                class="withdraw-amt-btn border border-slate-200 bg-white rounded-2xl py-3 px-2 text-center transition">
+                                <p class="text-[17px] font-extrabold text-slate-800">৳500</p>
+                                <p class="text-[11px] font-semibold text-rose-500 bn-font mt-0.5">চার্জ: ৳10</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[13px] font-bold text-slate-600 mb-1.5">Payment Method</label>
+                        <select id="withdrawMethodSelect"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-3.5 py-3 text-[14px] font-semibold text-slate-700 focus:outline-none focus:border-[#00a86b]">
+                            <option value="">-- Choose Method --</option>
+                            <option value="bKash">bKash (বিকাশ)</option>
+                            <option value="Nagad">Nagad (নগদ)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[13px] font-bold text-slate-600 mb-1.5">Account Number</label>
+                        <input type="tel" id="withdrawPhoneInput" placeholder="01XXXXXXXXX"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-3.5 py-3 text-[14px] font-semibold text-slate-800 focus:outline-none focus:border-[#00a86b]">
+                    </div>
+
+                    <button type="button" onclick="submitWithdraw()"
+                        class="emerald-gradient w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] tracking-wide py-3.5 rounded-2xl shadow-md transition uppercase">
+                        CONFIRM WITHDRAW
+                    </button>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: HELP & SUPPORT ==================== -->
+            <section id="view-help" class="app-view hidden space-y-3.5">
+                <div class="bg-white rounded-[24px] p-4 shadow-sm border border-emerald-100 space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-9 h-9 rounded-xl bg-emerald-50 text-[#00a86b] flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-headset"></i>
+                        </span>
+                        <div>
+                            <h2 class="text-[18px] font-extrabold text-slate-800">Help &amp; Support</h2>
+                            <p class="text-[12.5px] text-slate-500 bn-font">আমাদের অফিসিয়াল চ্যানেল ও এডমিন সাপোর্ট</p>
+                        </div>
+                    </div>
+
+                    <a href="https://t.me/bangladesh_fast_earn" target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-[#f0fdf7] hover:bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5 flex items-center justify-between transition">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-[#229ED9] text-white flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-telegram"></i>
+                            </div>
+                            <div>
+                                <p class="text-[14.5px] font-bold text-slate-800">Official Telegram Channel</p>
+                                <p class="text-[12px] text-slate-500 bn-font">প্রতিদিনের গিফট কোড ও আপডেট পান</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 text-sm"></i>
+                    </a>
+
+                    <a href="https://t.me/bangladeshfast_earn" target="_blank" rel="noopener noreferrer"
+                        class="w-full bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl p-3.5 flex items-center justify-between transition">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl emerald-gradient text-white flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class="text-[14.5px] font-bold text-slate-800">Admin Support (@bangladeshfast_earn)</p>
+                                <p class="text-[12px] text-slate-500 bn-font">যেকোনো সমস্যায় সরাসরি মেসেজ করুন</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 text-sm"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ==================== VIEW: PROFILE SETTINGS ==================== -->
+            <section id="view-profile" class="app-view hidden space-y-3.5">
+                <div class="bg-white rounded-[26px] overflow-hidden shadow-sm border border-emerald-100">
+                    <div class="h-24 emerald-gradient"></div>
+                    <div class="px-4 pb-5 -mt-12">
+                        <div class="flex flex-col items-center">
+                            <button type="button" onclick="triggerAvatarUpload()"
+                                class="w-24 h-24 rounded-3xl bg-white p-1 shadow-lg border-2 border-amber-300 overflow-hidden relative">
+                                <img id="profileAvatarImg" src="" alt="Profile" class="w-full h-full object-cover rounded-2xl hidden">
+                                <div id="profileAvatarPlaceholder" class="w-full h-full rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-700 text-3xl">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </button>
+                            <h2 class="text-[18px] font-extrabold text-slate-800 mt-2.5">Profile Settings</h2>
+                            <button type="button" onclick="triggerAvatarUpload()" class="text-[12px] font-bold text-[#00a86b] bn-font">
+                                প্রোফাইল ছবি পরিবর্তন করুন
+                            </button>
+                        </div>
+
+                        <div class="space-y-3.5 mt-4">
+                            <div>
+                                <label class="block text-[13px] font-bold text-slate-600 mb-1">Full Name</label>
+                                <input type="text" id="profileNameInput" value="New User"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-3.5 py-2.5 text-[14px] font-semibold text-slate-800 focus:outline-none focus:border-[#00a86b]">
+                            </div>
+
+                            <div>
+                                <label class="block text-[13px] font-bold text-slate-600 mb-1">Mobile Number</label>
+                                <input type="tel" id="profilePhoneInput" placeholder="01XXXXXXXXX"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-3.5 py-2.5 text-[14px] font-semibold text-slate-800 focus:outline-none focus:border-[#00a86b]">
+                            </div>
+
+                            <div>
+                                <label class="block text-[13px] font-bold text-slate-600 mb-1">Email Address</label>
+                                <input type="email" id="profileEmailInput" value="user@bangladeshfastearn.com" readonly
+                                    class="w-full bg-slate-100 border border-slate-200 rounded-2xl px-3.5 py-2.5 text-[14px] text-slate-500 cursor-not-allowed">
+                            </div>
+
+                            <button type="button" onclick="saveProfileChanges()"
+                                class="emerald-gradient w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] py-3.5 rounded-2xl shadow-md uppercase transition">
+                                SAVE PROFILE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==================== FIXED BOTTOM NAVIGATION BAR (5 TABS) ==================== -->
+        <nav class="bottom-nav fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] h-[70px] px-2 flex items-center justify-around z-30 text-white">
+            <button type="button" onclick="switchView('home')" id="nav-home"
+                class="nav-btn flex flex-col items-center justify-center w-16 py-1 text-amber-300 font-extrabold transition">
+                <i class="fa-solid fa-house text-[18px] mb-1 pointer-events-none"></i>
+                <span class="text-[11px]">Home</span>
+            </button>
+
+            <button type="button" onclick="switchView('tutorials')" id="nav-tutorials"
+                class="nav-btn flex flex-col items-center justify-center w-16 py-1 text-white/90 font-semibold transition">
+                <i class="fa-solid fa-circle-play text-[18px] mb-1 pointer-events-none"></i>
+                <span class="text-[11px]">Tutorials</span>
+            </button>
+
+            <button type="button" onclick="switchView('wallet')" id="nav-wallet"
+                class="nav-btn flex flex-col items-center justify-center w-16 py-1 text-white/90 font-semibold transition">
+                <i class="fa-solid fa-wallet text-[18px] mb-1 pointer-events-none"></i>
+                <span class="text-[11px]">Wallet</span>
+            </button>
+
+            <button type="button" onclick="switchView('help')" id="nav-help"
+                class="nav-btn flex flex-col items-center justify-center w-16 py-1 text-white/90 font-semibold transition">
+                <i class="fa-solid fa-headset text-[18px] mb-1 pointer-events-none"></i>
+                <span class="text-[11px]">Help</span>
+            </button>
+
+            <button type="button" onclick="switchView('profile')" id="nav-profile"
+                class="nav-btn flex flex-col items-center justify-center w-16 py-1 text-white/90 font-semibold transition">
+                <i class="fa-solid fa-circle-user text-[18px] mb-1 pointer-events-none"></i>
+                <span class="text-[11px]">Profile</span>
+            </button>
+        </nav>
+
+        <!-- ==================== MODERN WHITE PROFILE-CARD SLIDE-OUT DRAWER ==================== -->
+        <div id="sideDrawer" class="fixed inset-0 z-50 hidden">
+            <div onclick="closeDrawer()" class="fixed inset-0 bg-slate-900/65 backdrop-blur-xs cursor-pointer"></div>
+
+            <aside class="relative w-[86%] max-w-[335px] h-full bg-white shadow-2xl flex flex-col overflow-hidden animate-drawer z-10">
+                <!-- White Top Brand Bar -->
+                <div class="bg-white px-4 py-3.5 border-b border-slate-100 flex items-center justify-between shrink-0">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <img src="https://i.ibb.co.com/HT4VF88G/file-00000000c8f08211bfd9d402a879d172.png"
+                             alt="Bangladesh Fast Earn Logo"
+                             onerror="this.onerror=null;this.src='https://placehold.co/64x64/064e3b/fde68a?text=BFE';"
+                             class="brand-logo-img w-8 h-8 shrink-0">
+                        <span class="text-[#047857] font-extrabold tracking-tight text-[14px] uppercase truncate">
+                            BANGLADESH FAST EARN
+                        </span>
+                    </div>
+                    <button type="button" onclick="closeDrawer()" aria-label="Close Sidebar"
+                        class="w-9 h-9 rounded-full hover:bg-slate-100 active:scale-90 text-slate-500 text-lg flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-xmark pointer-events-none"></i>
+                    </button>
+                </div>
+
+                <!-- Upper Gray Profile Card (#f4f5f7) -->
+                <div class="bg-[#f4f5f7] px-5 pt-3.5 pb-4 border-b border-slate-100 text-center shrink-0">
+                    <button type="button" onclick="triggerAvatarUpload()"
+                        class="drawer-avatar-ring w-[72px] h-[72px] mx-auto rounded-full p-[3px] shadow-md block active:scale-95 transition">
+                        <div class="w-full h-full rounded-full bg-white p-[2px] overflow-hidden">
+                            <img id="drawerAvatarImg" src="" alt="Drawer Avatar" class="w-full h-full object-cover rounded-full hidden">
+                            <div id="drawerAvatarPlaceholder" class="w-full h-full rounded-full bg-emerald-50 flex items-center justify-center text-emerald-700 text-xl">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                        </div>
+                    </button>
+
+                    <h3 id="drawerUserName" class="text-[17px] font-extrabold text-slate-800 bn-font mt-2 truncate">
+                        New User
+                    </h3>
+
+                    <div class="flex items-center justify-center gap-2 mt-1">
+                        <span class="bg-slate-200/80 text-slate-600 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">
+                            ID: 32273
+                        </span>
+                        <span class="bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                            <span>Active</span>
+                        </span>
+                    </div>
+
+                    <!-- Split White Card: BALANCE & MEMBER SINCE -->
+                    <div class="bg-white rounded-2xl shadow-xs border border-slate-100 grid grid-cols-2 divide-x divide-slate-100 py-2.5 mt-3">
+                        <div class="px-2 text-center">
+                            <p class="text-[9.5px] font-bold tracking-wider uppercase text-slate-400">BALANCE</p>
+                            <p id="drawerBalanceText" class="text-[14.5px] font-extrabold text-slate-800 mt-0.5">৳ 00.00</p>
+                        </div>
+                        <div class="px-2 text-center">
+                            <p class="text-[9.5px] font-bold tracking-wider uppercase text-slate-400">MEMBER SINCE</p>
+                            <p class="text-[14.5px] font-bold text-slate-800 mt-0.5">Nov 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Dual Action Buttons: Profile (#5b5ce6) & Support (#ef4444) -->
+                    <div class="grid grid-cols-2 gap-2.5 mt-3">
+                        <button type="button" onclick="closeDrawer(); switchView('profile')"
+                            class="bg-[#5b5ce6] hover:bg-[#4f46e5] active:scale-95 text-white font-semibold py-2 px-3 rounded-xl shadow-xs flex items-center justify-center gap-2 text-[13px] transition">
+                            <i class="fa-solid fa-user-gear text-xs pointer-events-none"></i>
+                            <span>Profile</span>
+                        </button>
+                        <button type="button" onclick="closeDrawer(); switchView('help')"
+                            class="bg-[#ef4444] hover:bg-[#dc2626] active:scale-95 text-white font-semibold py-2 px-3 rounded-xl shadow-xs flex items-center justify-center gap-2 text-[13px] transition">
+                            <i class="fa-solid fa-headset text-xs pointer-events-none"></i>
+                            <span>Support</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Categorized Navigation Links -->
+                <div class="flex-1 overflow-y-auto bg-white px-4 py-3.5 space-y-4 no-scrollbar">
+                    <div>
+                        <p class="text-[10.5px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-1">HOME SELECTION</p>
+                        <div class="space-y-0.5">
+                            <button type="button" onclick="closeDrawer(); switchView('home')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-[#00a86b] text-base"><i class="fa-solid fa-house"></i></span>
+                                <span>Dashboard</span>
+                            </button>
+                            <button type="button" onclick="closeDrawer(); switchView('profile')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-[#5b5ce6] text-base"><i class="fa-solid fa-user-gear"></i></span>
+                                <span>Profile Update</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[10.5px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-1">FINANCE</p>
+                        <div class="space-y-0.5">
+                            <button type="button" onclick="closeDrawer(); switchView('wallet')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-emerald-600 text-base"><i class="fa-solid fa-money-bill-transfer"></i></span>
+                                <span>Withdraw Funds</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-[10.5px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 px-1">EARN &amp; COMMUNITY</p>
+                        <div class="space-y-0.5">
+                            <button type="button" onclick="closeDrawer(); switchView('target')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-amber-500 text-base"><i class="fa-solid fa-trophy"></i></span>
+                                <span>Target Bonus</span>
+                            </button>
+                            <button type="button" onclick="closeDrawer(); switchView('gift')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-pink-500 text-base"><i class="fa-solid fa-gift"></i></span>
+                                <span>Gift Code</span>
+                            </button>
+                            <button type="button" onclick="closeDrawer(); switchView('tutorials')"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-orange-500 text-base"><i class="fa-solid fa-circle-play"></i></span>
+                                <span>Work Tutorials</span>
+                            </button>
+                            <button type="button" onclick="closeDrawer(); openWelcomeModal()"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-sky-500 text-base"><i class="fa-solid fa-bell"></i></span>
+                                <span>Notice Board</span>
+                            </button>
+                            <a href="https://t.me/bangladesh_fast_earn" target="_blank" rel="noopener noreferrer" onclick="closeDrawer()"
+                                class="w-full flex items-center gap-3.5 py-2 px-2 rounded-xl hover:bg-slate-50 text-slate-700 font-semibold text-[14px]">
+                                <span class="w-6 flex items-center justify-center text-[#229ED9] text-base"><i class="fa-solid fa-paper-plane"></i></span>
+                                <span>Official Telegram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pinned Red Log Out Button -->
+                <div class="p-4 bg-white border-t border-slate-100 shrink-0">
+                    <button type="button" onclick="logoutUser()"
+                        class="w-full bg-red-600 hover:bg-red-700 active:scale-[0.98] text-white font-extrabold text-[14px] py-3 px-4 rounded-xl shadow-md shadow-red-500/20 flex items-center justify-center gap-2 transition">
+                        <i class="fa-solid fa-right-from-bracket pointer-events-none"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ==================== WELCOME NOTICE MODAL (#welcomeModal) ==================== -->
+        <div id="welcomeModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+            <div onclick="closeWelcomeModal()" class="fixed inset-0 bg-slate-900/70 backdrop-blur-xs cursor-pointer"></div>
+
+            <div class="bg-white w-full max-w-[355px] rounded-[28px] p-6 pt-8 relative z-10 shadow-2xl animate-pop text-center">
+                <button type="button" onclick="closeWelcomeModal()" aria-label="Close Welcome Notice"
+                    class="w-10 h-10 rounded-full bg-slate-100 hover:bg-rose-50 active:scale-90 text-slate-700 hover:text-rose-600 flex items-center justify-center absolute top-3.5 right-3.5 transition">
+                    <i class="fa-solid fa-xmark text-base pointer-events-none"></i>
+                </button>
+
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-100 to-amber-100 border-2 border-amber-300 text-[#047857] flex items-center justify-center mx-auto mb-3.5 text-2xl">
+                    <i class="fa-solid fa-bullhorn pointer-events-none"></i>
+                </div>
+
+                <h2 class="text-[23px] font-extrabold text-slate-800 tracking-tight mb-2">Welcome!</h2>
+
+                <p class="text-[14px] text-slate-600 bn-font leading-relaxed mb-5 px-1">
+                    আমাদের টেলিগ্রাম চ্যানেলে প্রতিদিন গিফট কোড দেয়া হবে। জয়েন করে রাখুন।
+                </p>
+
+                <a href="https://t.me/bangladesh_fast_earn" target="_blank" rel="noopener noreferrer" onclick="closeWelcomeModal()"
+                    class="w-full max-w-[235px] mx-auto bg-[#0284C7] hover:bg-[#0369A1] active:scale-95 text-white font-bold text-[14px] py-3 px-5 rounded-full shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 transition">
+                    <i class="fa-brands fa-telegram text-lg pointer-events-none"></i>
+                    <span>Join Telegram</span>
+                </a>
+
+                <hr class="my-4 border-slate-100">
+
+                <p class="text-[13px] font-bold text-rose-600 bn-font leading-snug mb-3">
+                    যাদের ট্রানজেকশন সমস্যা তারা নিচের আইডিতে যোগাযোগ করবেন
+                </p>
+
+                <div class="grid grid-cols-2 gap-2.5">
+                    <a href="https://t.me/bangladeshfast_earn" target="_blank" rel="noopener noreferrer" onclick="closeWelcomeModal()"
+                        class="bg-[#047857] hover:bg-[#065f46] active:scale-95 text-white font-bold text-[13px] bn-font py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition">
+                        <i class="fa-solid fa-user-tie pointer-events-none"></i>
+                        <span>এডমিন 1</span>
+                    </a>
+                    <a href="https://t.me/bangladeshfast_earn" target="_blank" rel="noopener noreferrer" onclick="closeWelcomeModal()"
+                        class="bg-[#00a86b] hover:bg-[#059669] active:scale-95 text-white font-bold text-[13px] bn-font py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-xs transition">
+                        <i class="fa-solid fa-user-tie pointer-events-none"></i>
+                        <span>এডমিন 2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FULL-SCREEN POPUP NOTICE MODAL (#actionPopupModal) ==================== -->
+    <div id="actionPopupModal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4">
+        <div onclick="closeActionPopup()" class="fixed inset-0 bg-slate-900/70 backdrop-blur-xs cursor-pointer"></div>
+
+        <div id="actionPopupBox"
+            class="bg-white w-full max-w-[355px] rounded-[28px] p-6 pt-7 relative z-10 shadow-2xl animate-pop text-center border-b-4 border-[#00a86b]">
+            <button type="button" onclick="closeActionPopup()" aria-label="Close Notice"
+                class="w-10 h-10 rounded-full bg-slate-100 hover:bg-rose-50 active:scale-90 text-slate-700 hover:text-rose-600 flex items-center justify-center absolute top-3.5 right-3.5 transition">
+                <i class="fa-solid fa-xmark text-base pointer-events-none"></i>
+            </button>
+
+            <div id="actionPopupIconCircle"
+                class="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-200 text-[#00a86b] flex items-center justify-center mx-auto mb-3.5 text-2xl">
+                <i id="actionPopupIconGlyph" class="fa-solid fa-circle-check pointer-events-none"></i>
+            </div>
+
+            <h3 id="actionPopupHeading" class="text-[20px] font-extrabold text-slate-800 bn-font mb-2">
+                নোটিশ
+            </h3>
+
+            <p id="actionPopupBody" class="text-[14px] text-slate-600 bn-font leading-relaxed mb-5 px-1">
+                সফলভাবে সম্পন্ন হয়েছে।
+            </p>
+
+            <button type="button" id="actionPopupConfirmBtn" onclick="closeActionPopup()"
+                class="emerald-gradient w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] py-3.5 px-5 rounded-2xl shadow-md uppercase tracking-wide transition">
+                ঠিক আছে / OK
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /* ==================== APPLICATION STATE ==================== */
+        const ADMIN_GIFT_CODES = {
+            'FAST10': 10,
+            'BD25': 25
+        };
+
+        let walletBalance = 0;
+        let selectedWithdrawAmt = null;
+        let bannerIndex = 0;
+        let bannerInterval = null;
+        let targetCountdownTimer = null;
+
+        const fbActivityRecords = [];
+        const gmailActivityRecords = [];
+        const instaActivityRecords = [];
+        const claimedGiftCodes = [];
+
+        /* ==================== AUTHENTICATION (LOG IN & SIGN UP) ==================== */
+        function switchAuthTab(tab) {
+            const loginCard = document.getElementById('loginCard');
+            const signupCard = document.getElementById('signupCard');
+            const tabLogin = document.getElementById('authTabLogin');
+            const tabSignup = document.getElementById('authTabSignup');
+            if (!loginCard || !signupCard || !tabLogin || !tabSignup) return;
+
+            if (tab === 'signup') {
+                loginCard.classList.add('hidden');
+                signupCard.classList.remove('hidden');
+                tabSignup.className = 'gold-cta-btn py-2.5 rounded-full text-[13.5px] font-extrabold text-white shadow-sm transition';
+                tabLogin.className = 'bg-white py-2.5 rounded-full text-[13.5px] font-bold text-amber-900 hover:bg-amber-50 transition';
+            } else {
+                signupCard.classList.add('hidden');
+                loginCard.classList.remove('hidden');
+                tabLogin.className = 'gold-cta-btn py-2.5 rounded-full text-[13.5px] font-extrabold text-white shadow-sm transition';
+                tabSignup.className = 'bg-white py-2.5 rounded-full text-[13.5px] font-bold text-amber-900 hover:bg-amber-50 transition';
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleInputPassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (!input || !icon) return;
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fa-regular fa-eye-slash pointer-events-none';
+            } else {
+                input.type = 'password';
+                icon.className = 'fa-regular fa-eye pointer-events-none';
+            }
+        }
+
+        function syncUserProfileUI(profile) {
+            if (!profile) return;
+            const name = profile.fullName || 'New User';
+            const email = profile.email || 'user@bangladeshfastearn.com';
+            const phone = profile.phone || '';
+
+            const headerName = document.getElementById('headerUserName');
+            const drawerName = document.getElementById('drawerUserName');
+            const profileName = document.getElementById('profileNameInput');
+            const profileEmail = document.getElementById('profileEmailInput');
+            const profilePhone = document.getElementById('profilePhoneInput');
+
+            if (headerName) headerName.textContent = name;
+            if (drawerName) drawerName.textContent = name;
+            if (profileName) profileName.value = name;
+            if (profileEmail) profileEmail.value = email;
+            if (profilePhone) profilePhone.value = phone;
+        }
+
+        function completeLoginAndEnterDashboard(profile, showSuccessAlert) {
+            syncUserProfileUI(profile);
+            try {
+                localStorage.setItem('bfe_active_user', JSON.stringify(profile));
+                localStorage.setItem('bfe_logged_in', 'true');
+            } catch (err) {}
+
+            const authGateway = document.getElementById('authGateway');
+            const mainApp = document.getElementById('mainApp');
+            if (authGateway) authGateway.classList.add('hidden');
+            if (mainApp) mainApp.classList.remove('hidden');
+
+            switchView('home');
+            openWelcomeModal();
+
+            if (showSuccessAlert) {
+                showActionPopup('success', 'স্বাগতম!', `${profile.fullName}, আপনার ড্যাশবোর্ডে সফলভাবে প্রবেশ সম্পন্ন হয়েছে।`);
+            }
+        }
+
+        function submitLogin() {
+            const emailEl = document.getElementById('loginEmail');
+            const passEl = document.getElementById('loginPassword');
+            const email = (emailEl ? emailEl.value : '').trim().toLowerCase();
+            const password = passEl ? passEl.value : '';
+
+            if (!email || !email.includes('@')) {
+                showActionPopup('error', 'সঠিক ইমেইল দিন', 'দয়া করে আপনার সঠিক Email Address লিখুন।');
+                return;
+            }
+            if (!password) {
+                showActionPopup('error', 'পাসওয়ার্ড দিন', 'দয়া করে আপনার Password লিখুন।');
+                return;
+            }
+
+            let userProfile = null;
+            try {
+                const rawUsers = localStorage.getItem('bfe_users_db');
+                const users = rawUsers ? JSON.parse(rawUsers) : [];
+                if (Array.isArray(users)) {
+                    const found = users.find(u => u.email === email);
+                    if (found) {
+                        if (found.password !== password) {
+                            showActionPopup('error', 'ভুল পাসওয়ার্ড', 'আপনার দেওয়া পাসওয়ার্ডটি সঠিক নয়। আবার চেষ্টা করুন।');
+                            return;
+                        }
+                        userProfile = found;
+                    }
+                }
+            } catch (err) {}
+
+            if (!userProfile) {
+                const autoName = email.split('@')[0]
+                    .replace(/[._-]+/g, ' ')
+                    .replace(/\b\w/g, c => c.toUpperCase()) || 'New User';
+                userProfile = {
+                    fullName: autoName,
+                    phone: '',
+                    email: email,
+                    password: password
+                };
+            }
+
+            completeLoginAndEnterDashboard(userProfile, false);
+        }
+
+        function submitSignup() {
+            const referral = (document.getElementById('signupReferral')?.value || '').trim();
+            const fullName = (document.getElementById('signupFullName')?.value || '').trim();
+            const phone = (document.getElementById('signupPhone')?.value || '').trim();
+            const email = (document.getElementById('signupEmail')?.value || '').trim().toLowerCase();
+            const password = document.getElementById('signupPassword')?.value || '';
+            const confirmPassword = document.getElementById('signupConfirmPassword')?.value || '';
+
+            if (!fullName) {
+                showActionPopup('error', 'নাম প্রয়োজন', 'দয়া করে আপনার Full Name লিখুন।');
+                return;
+            }
+            if (!phone || phone.length < 11) {
+                showActionPopup('error', 'মোবাইল নাম্বার দিন', '১১ ডিজিটের সঠিক Bangladeshi Mobile Number লিখুন।');
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                showActionPopup('error', 'ইমেইল প্রয়োজন', 'দয়া করে সঠিক Email Address লিখুন।');
+                return;
+            }
+            if (!password || password.length < 4) {
+                showActionPopup('error', 'পাসওয়ার্ড প্রয়োজন', 'কমপক্ষে ৪ অক্ষরের পাসওয়ার্ড দিন।');
+                return;
+            }
+            if (password !== confirmPassword) {
+                showActionPopup('error', 'পাসওয়ার্ড মিলছে না', 'Password এবং Confirm Password একই হতে হবে।');
+                return;
+            }
+
+            const newProfile = {
+                fullName: fullName,
+                phone: phone,
+                email: email,
+                password: password,
+                referralId: referral
+            };
+
+            try {
+                const rawUsers = localStorage.getItem('bfe_users_db');
+                const users = rawUsers ? JSON.parse(rawUsers) : [];
+                const updated = Array.isArray(users) ? users.filter(u => u.email !== email) : [];
+                updated.push(newProfile);
+                localStorage.setItem('bfe_users_db', JSON.stringify(updated));
+            } catch (err) {}
+
+            completeLoginAndEnterDashboard(newProfile, false);
+        }
+
+        function logoutUser() {
+            closeDrawer();
+            closeWelcomeModal();
+            try {
+                localStorage.setItem('bfe_logged_in', 'false');
+            } catch (err) {}
+
+            const mainApp = document.getElementById('mainApp');
+            const authGateway = document.getElementById('authGateway');
+            if (mainApp) mainApp.classList.add('hidden');
+            if (authGateway) authGateway.classList.remove('hidden');
+
+            switchAuthTab('login');
+            showActionPopup('info', 'লগ আউট সম্পন্ন', 'আপনি সফলভাবে অ্যাকাউন্ট থেকে লগ আউট করেছেন।');
+        }
+
+        /* ==================== WALLET & BALANCE ==================== */
+        function loadWalletBalance() {
+            try {
+                const saved = localStorage.getItem('bfe_wallet_balance');
+                if (saved !== null && !isNaN(Number(saved))) {
+                    walletBalance = Math.max(0, Number(saved));
+                }
+            } catch (err) {}
+            renderBalance();
+        }
+
+        function renderBalance() {
+            try {
+                localStorage.setItem('bfe_wallet_balance', String(walletBalance));
+            } catch (err) {}
+            const formatted = walletBalance === 0 ? '৳ 00.00' : '৳ ' + walletBalance.toFixed(2);
+            ['headerBalanceText', 'walletBalanceText', 'drawerBalanceText'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = formatted;
+            });
+        }
+
+        /* ==================== NAVIGATION & DRAWER ==================== */
+        function switchView(viewName) {
+            document.querySelectorAll('.app-view').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            if (viewName === 'fb') toggleSalesActivity('fb', false);
+            if (viewName === 'gmail') toggleSalesActivity('gmail', false);
+            if (viewName === 'insta') toggleSalesActivity('insta', false);
+
+            const activeSection = document.getElementById('view-' + viewName);
+            if (activeSection) activeSection.classList.remove('hidden');
+
+            const scrollBox = document.getElementById('mainScrollContainer');
+            if (scrollBox) scrollBox.scrollTop = 0;
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.id === 'nav-' + viewName) {
+                    btn.classList.remove('text-white/90', 'font-semibold');
+                    btn.classList.add('text-amber-300', 'font-extrabold');
+                } else {
+                    btn.classList.remove('text-amber-300', 'font-extrabold');
+                    btn.classList.add('text-white/90', 'font-semibold');
+                }
+            });
+        }
+
+        function openDrawer() {
+            const drawer = document.getElementById('sideDrawer');
+            if (drawer) drawer.classList.remove('hidden');
+        }
+
+        function closeDrawer() {
+            const drawer = document.getElementById('sideDrawer');
+            if (drawer) drawer.classList.add('hidden');
+        }
+
+        /* ==================== MODALS (WELCOME & FULL-SCREEN ACTION POPUP) ==================== */
+        function openWelcomeModal() {
+            const dot = document.getElementById('headerNotifDot');
+            if (dot) dot.classList.add('hidden');
+            const modal = document.getElementById('welcomeModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function showActionPopup(type, title, message) {
+            const modal = document.getElementById('actionPopupModal');
+            const box = document.getElementById('actionPopupBox');
+            const circle = document.getElementById('actionPopupIconCircle');
+            const glyph = document.getElementById('actionPopupIconGlyph');
+            const heading = document.getElementById('actionPopupHeading');
+            const body = document.getElementById('actionPopupBody');
+            const btn = document.getElementById('actionPopupConfirmBtn');
+            if (!modal || !box || !circle || !glyph || !heading || !body || !btn) return;
+
+            heading.textContent = title || 'নোটিশ';
+            body.textContent = message || '';
+
+            box.className = 'bg-white w-full max-w-[355px] rounded-[28px] p-6 pt-7 relative z-10 shadow-2xl animate-pop text-center border-b-4';
+            circle.className = 'w-16 h-16 rounded-full border-2 flex items-center justify-center mx-auto mb-3.5 text-2xl';
+            btn.className = 'w-full hover:opacity-95 active:scale-[0.98] text-white font-extrabold text-[14px] py-3.5 px-5 rounded-2xl shadow-md uppercase tracking-wide transition';
+
+            if (type === 'error') {
+                box.classList.add('border-rose-500');
+                circle.classList.add('bg-rose-50', 'border-rose-200', 'text-rose-600');
+                glyph.className = 'fa-solid fa-circle-xmark pointer-events-none';
+                btn.classList.add('bg-rose-600');
+            } else if (type === 'info') {
+                box.classList.add('border-amber-500');
+                circle.classList.add('bg-amber-50', 'border-amber-200', 'text-amber-600');
+                glyph.className = 'fa-solid fa-circle-info pointer-events-none';
+                btn.classList.add('bg-amber-600');
+            } else {
+                box.classList.add('border-[#00a86b]');
+                circle.classList.add('bg-emerald-50', 'border-emerald-200', 'text-[#00a86b]');
+                glyph.className = 'fa-solid fa-circle-check pointer-events-none';
+                btn.classList.add('emerald-gradient');
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeActionPopup() {
+            const modal = document.getElementById('actionPopupModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        /* ==================== CLIPBOARD HELPER ==================== */
+        function copyText(text) {
+            if (!text) return;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {}
+            document.body.removeChild(textarea);
+            showActionPopup('success', 'কপি সম্পন্ন!', `"${text}" সফলভাবে কপি করা হয়েছে।`);
+        }
+
+        /* ==================== SOCIAL SELL SUBMISSIONS & HISTORY ==================== */
+        function toggleSalesActivity(service, showActivity) {
+            const formWrap = document.getElementById(service + 'FormWrap');
+            const actWrap = document.getElementById(service + 'ActivityWrap');
+            if (!formWrap || !actWrap) return;
+            if (showActivity) {
+                formWrap.classList.add('hidden');
+                actWrap.classList.remove('hidden');
+                renderSalesActivityList(service);
+            } else {
+                actWrap.classList.add('hidden');
+                formWrap.classList.remove('hidden');
+            }
+        }
+
+        function renderSalesActivityList(service) {
+            const listEl = document.getElementById(service + 'ActivityList');
+            if (!listEl) return;
+            const records = service === 'fb' ? fbActivityRecords : service === 'gmail' ? gmailActivityRecords : instaActivityRecords;
+            if (records.length === 0) {
+                listEl.innerHTML = '<p class="py-8 text-center text-slate-400 bn-font">কোনো তথ্য পাওয়া যায়নি</p>';
+                return;
+            }
+            listEl.innerHTML = records.map(item => `
+                <div class="py-2.5 flex items-center justify-between gap-2">
+                    <span class="font-bold text-slate-700 truncate">${item.label}</span>
+                    <span class="text-[11px] font-bold bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-0.5 rounded-full">Pending</span>
+                    <span class="font-extrabold text-[#047857]">${item.rate}</span>
+                </div>
+            `).join('');
+        }
+
+        function submitFbOrder() {
+            const uid = (document.getElementById('fbUidInput')?.value || '').trim();
+            const pass = (document.getElementById('fbPassInput')?.value || '').trim();
+            const cookies = (document.getElementById('fbCookiesInput')?.value || '').trim();
+            if (!uid || !pass || !cookies) {
+                showActionPopup('error', 'তথ্য অসম্পূর্ণ', 'দয়া করে UID, Password এবং Cookies সঠিকভাবে পূরণ করুন।');
+                return;
+            }
+            fbActivityRecords.unshift({ label: uid, rate: '৳5.50' });
+            document.getElementById('fbUidInput').value = '';
+            document.getElementById('fbPassInput').value = '';
+            document.getElementById('fbCookiesInput').value = '';
+            showActionPopup('success', 'জমা সম্পন্ন!', 'আপনার Facebook ID সফলভাবে রিভিউয়ের জন্য জমা হয়েছে।');
+        }
+
+        function submitGmailOrder() {
+            const addr = (document.getElementById('gmailAddrInput')?.value || '').trim();
+            const pass = (document.getElementById('gmailPassInput')?.value || '').trim();
+            if (!addr || !addr.includes('@') || !pass) {
+                showActionPopup('error', 'তথ্য অসম্পূর্ণ', 'সঠিক জিমেইল এড্রেস এবং পাসওয়ার্ড লিখুন।');
+                return;
+            }
+            gmailActivityRecords.unshift({ label: addr, rate: '৳17.00' });
+            document.getElementById('gmailAddrInput').value = '';
+            document.getElementById('gmailPassInput').value = '';
+            showActionPopup('success', 'জমা সম্পন্ন!', 'আপনার Gmail ID সফলভাবে রিভিউয়ের জন্য জমা হয়েছে।');
+        }
+
+        function submitInstaOrder() {
+            const user = (document.getElementById('instaUserInput')?.value || '').trim();
+            const pass = (document.getElementById('instaPassInput')?.value || '').trim();
+            const key2fa = (document.getElementById('insta2faInput')?.value || '').trim();
+            if (!user || !pass || !key2fa) {
+                showActionPopup('error', 'তথ্য অসম্পূর্ণ', 'দয়া করে Username, Password এবং 2FA Key পূরণ করুন।');
+                return;
+            }
+            instaActivityRecords.unshift({ label: user, rate: 'Tk 4.00' });
+            document.getElementById('instaUserInput').value = '';
+            document.getElementById('instaPassInput').value = '';
+            document.getElementById('insta2faInput').value = '';
+            showActionPopup('success', 'জমা সম্পন্ন!', 'আপনার Instagram ID সফলভাবে রিভিউয়ের জন্য জমা হয়েছে।');
+        }
+
+        /* ==================== GIFT CODE REDEMPTION ==================== */
+        function submitGiftCode() {
+            const field = document.getElementById('giftCodeField');
+            const code = (field ? field.value : '').trim().toUpperCase();
+            if (!code || !Object.prototype.hasOwnProperty.call(ADMIN_GIFT_CODES, code)) {
+                showActionPopup('error', 'ভুল গিফট কোড', 'ভুল গিফট কোড! সঠিক কোড দিন।');
+                return;
+            }
+            if (claimedGiftCodes.some(c => c.code === code)) {
+                showActionPopup('info', 'ইতিমধ্যে ব্যবহৃত', 'এই গিফট কোডটি আপনি ইতিমধ্যে ক্লেইম করেছেন।');
+                return;
+            }
+
+            const reward = ADMIN_GIFT_CODES[code];
+            walletBalance += reward;
+            renderBalance();
+            claimedGiftCodes.unshift({ code: code, reward: reward });
+            if (field) field.value = '';
+
+            const wrap = document.getElementById('redeemedListWrap');
+            const list = document.getElementById('redeemedList');
+            if (wrap && list) {
+                wrap.classList.remove('hidden');
+                list.innerHTML = claimedGiftCodes.map(item => `
+                    <div class="bg-[#f0fdf7] border border-emerald-200 rounded-xl px-3 py-2 flex items-center justify-between">
+                        <span class="font-extrabold text-slate-800">${item.code}</span>
+                        <span class="font-extrabold text-[#047857]">+ ৳${item.reward}.00</span>
+                    </div>
+                `).join('');
+            }
+
+            showActionPopup('success', 'গিফট কোড সফল!', `অভিনন্দন! আপনার ব্যালেন্সে ৳${reward}.00 যুক্ত হয়েছে।`);
+        }
+
+        /* ==================== TARGET BONUS (3, 5, 8, 14, 30 DAYS) ==================== */
+        function initTargetBonusTimer() {
+            const optionsDays = [3, 5, 8, 14, 30];
+            let deadline = 0;
+            try {
+                const stored = localStorage.getItem('bfe_target_deadline');
+                if (stored && Number(stored) > Date.now()) {
+                    deadline = Number(stored);
+                }
+            } catch (err) {}
+
+            if (!deadline) {
+                const chosenDays = optionsDays[Math.floor(Math.random() * optionsDays.length)];
+                deadline = Date.now() + chosenDays * 24 * 60 * 60 * 1000;
+                try {
+                    localStorage.setItem('bfe_target_deadline', String(deadline));
+                } catch (err) {}
+            }
+
+            function updateTimerText() {
+                const diff = Math.max(0, deadline - Date.now());
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const mins = Math.floor((diff / (1000 * 60)) % 60);
+                const secs = Math.floor((diff / 1000) % 60);
+                const timerEl = document.getElementById('targetTimerDisplay');
+                if (timerEl) {
+                    timerEl.textContent = `আপনার সময়: ${days} দিন ${hours} ঘণ্টা ${mins} মিনিট ${secs} সেকেন্ড`;
+                }
+            }
+
+            updateTimerText();
+            clearInterval(targetCountdownTimer);
+            targetCountdownTimer = setInterval(updateTimerText, 1000);
+        }
+
+        function claimTargetReward() {
+            showActionPopup('info', 'টার্গেট অসম্পূর্ণ', 'বোনাস ক্লেইম করতে নির্ধারিত সময়ের মধ্যে ২০টি ভেরিফায়েড রেফার সম্পন্ন করুন।');
+        }
+
+        /* ==================== WITHDRAWALS ==================== */
+        function pickWithdrawAmount(btn, amount) {
+            selectedWithdrawAmt = amount;
+            document.querySelectorAll('.withdraw-amt-btn').forEach(el => {
+                el.classList.remove('border-[#00a86b]', 'bg-[#f0fdf7]', 'ring-2', 'ring-emerald-200');
+                el.classList.add('border-slate-200', 'bg-white');
+            });
+            btn.classList.remove('border-slate-200', 'bg-white');
+            btn.classList.add('border-[#00a86b]', 'bg-[#f0fdf7]', 'ring-2', 'ring-emerald-200');
+        }
+
+        function submitWithdraw() {
+            const method = document.getElementById('withdrawMethodSelect')?.value || '';
+            const phone = (document.getElementById('withdrawPhoneInput')?.value || '').trim();
+
+            if (!selectedWithdrawAmt) {
+                showActionPopup('info', 'অ্যামাউন্ট সিলেক্ট করুন', 'দয়া করে উইথড্র অ্যামাউন্ট সিলেক্ট করুন।');
+                return;
+            }
+            if (!method) {
+                showActionPopup('info', 'মেথড সিলেক্ট করুন', 'দয়া করে bKash অথবা Nagad সিলেক্ট করুন।');
+                return;
+            }
+            if (phone.length < 11) {
+                showActionPopup('error', 'ভুল নাম্বার', 'সঠিক ১১ ডিজিটের মোবাইল নাম্বার দিন।');
+                return;
+            }
+            if (walletBalance < selectedWithdrawAmt) {
+                showActionPopup('error', 'অপর্যাপ্ত ব্যালেন্স', 'পর্যাপ্ত ব্যালেন্স নেই! আপনার বর্তমান ব্যালেন্স ' + (walletBalance === 0 ? '৳ 00.00' : '৳ ' + walletBalance.toFixed(2)));
+                return;
+            }
+
+            walletBalance -= selectedWithdrawAmt;
+            renderBalance();
+            document.getElementById('withdrawPhoneInput').value = '';
+            showActionPopup('success', 'উইথড্র সফল!', `৳${selectedWithdrawAmt} (${method}) উইথড্র রিকোয়েস্ট সফলভাবে জমা হয়েছে।`);
+        }
+
+        /* ==================== AVATAR UPLOAD & PROFILE UPDATE ==================== */
+        function triggerAvatarUpload() {
+            const fileInput = document.getElementById('avatarFileInput');
+            if (fileInput) fileInput.click();
+        }
+
+        function applyAvatarDataUrl(dataUrl) {
+            if (!dataUrl) return;
+            ['header', 'profile', 'drawer'].forEach(prefix => {
+                const img = document.getElementById(prefix + 'AvatarImg');
+                const ph = document.getElementById(prefix + 'AvatarPlaceholder');
+                if (img && ph) {
+                    img.src = dataUrl;
+                    img.classList.remove('hidden');
+                    ph.classList.add('hidden');
+                }
+            });
+        }
+
+        function handleAvatarFileChange(event) {
+            const file = event?.target?.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const result = e.target.result;
+                applyAvatarDataUrl(result);
+                try {
+                    localStorage.setItem('bfe_avatar_data', result);
+                } catch (err) {}
+                showActionPopup('success', 'ছবি আপডেট হয়েছে', 'আপনার প্রোফাইল ছবি সফলভাবে সংরক্ষণ করা হয়েছে।');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function saveProfileChanges() {
+            const newName = (document.getElementById('profileNameInput')?.value || '').trim();
+            const newPhone = (document.getElementById('profilePhoneInput')?.value || '').trim();
+            if (!newName) {
+                showActionPopup('error', 'নাম প্রয়োজন', 'দয়া করে আপনার Full Name লিখুন।');
+                return;
+            }
+
+            let currentProfile = {
+                fullName: newName,
+                phone: newPhone,
+                email: document.getElementById('profileEmailInput')?.value || 'user@bangladeshfastearn.com'
+            };
+
+            try {
+                const raw = localStorage.getItem('bfe_active_user');
+                if (raw) {
+                    currentProfile = Object.assign(JSON.parse(raw), { fullName: newName, phone: newPhone });
+                }
+                localStorage.setItem('bfe_active_user', JSON.stringify(currentProfile));
+            } catch (err) {}
+
+            syncUserProfileUI(currentProfile);
+            showActionPopup('success', 'প্রোফাইল আপডেট', 'আপনার প্রোফাইল তথ্য সফলভাবে আপডেট হয়েছে।');
+        }
+
+        /* ==================== PROMO BANNER AUTO SLIDER ==================== */
+        function setBannerSlide(idx) {
+            bannerIndex = ((idx % 3) + 3) % 3;
+            const track = document.getElementById('bannerSliderTrack');
+            if (track) {
+                track.style.transform = `translateX(-${bannerIndex * 100}%)`;
+            }
+            document.querySelectorAll('.banner-dot').forEach((dot, i) => {
+                if (i === bannerIndex) {
+                    dot.className = 'banner-dot w-4 h-1.5 rounded-full bg-white transition-all';
+                } else {
+                    dot.className = 'banner-dot w-1.5 h-1.5 rounded-full bg-white/50 transition-all';
+                }
+            });
+        }
+
+        function startBannerLoop() {
+            clearInterval(bannerInterval);
+            bannerInterval = setInterval(() => {
+                setBannerSlide(bannerIndex + 1);
+            }, 3500);
+        }
+
+        /* ==================== INITIALIZATION ==================== */
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeActionPopup();
+                closeWelcomeModal();
+                closeDrawer();
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', function() {
+            loadWalletBalance();
+            initTargetBonusTimer();
+            startBannerLoop();
+
+            try {
+                const savedAvatar = localStorage.getItem('bfe_avatar_data');
+                if (savedAvatar) applyAvatarDataUrl(savedAvatar);
+
+                const savedUserRaw = localStorage.getItem('bfe_active_user');
+                if (savedUserRaw) {
+                    syncUserProfileUI(JSON.parse(savedUserRaw));
+                }
+
+                const isLoggedIn = localStorage.getItem('bfe_logged_in') === 'true';
+                if (isLoggedIn) {
+                    document.getElementById('authGateway').classList.add('hidden');
+                    document.getElementById('mainApp').classList.remove('hidden');
+                    openWelcomeModal();
+                } else {
+                    document.getElementById('mainApp').classList.add('hidden');
+                    document.getElementById('authGateway').classList.remove('hidden');
+                }
+            } catch (err) {
+                document.getElementById('mainApp').classList.add('hidden');
+                document.getElementById('authGateway').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
